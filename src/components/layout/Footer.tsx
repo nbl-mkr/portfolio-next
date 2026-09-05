@@ -30,10 +30,10 @@ export default function Footer() {
 
         <nav aria-label="Navigasi footer">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muteddark">Links</p>
-          <ul className="mt-4 flex flex-col gap-2.5">
+          <ul className="mt-4 flex flex-col gap-2.5 text-sm">
             {footerLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="text-sm text-paper transition-colors hover:text-muteddark">
+                <Link href={link.href} className="text-paper transition-colors hover:text-muteddark">
                   {link.label}
                 </Link>
               </li>
