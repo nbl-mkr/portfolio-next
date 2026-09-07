@@ -17,7 +17,7 @@ export default function ContactSection() {
           </p>
           <a
             href={`mailto:${profile.email}`}
-            className="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-paper px-6 py-3.5 text-sm font-semibold text-ink transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
+            className="mt-8 inline-flex items-center justify-center gap-2 rounded-xl border border-paper bg-paper px-6 py-3.5 text-sm font-semibold text-ink transition-colors duration-200 hover:border-transparent hover:bg-coal hover:text-paper motion-reduce:transition-none"
           >
             {profile.email}
           </a>
