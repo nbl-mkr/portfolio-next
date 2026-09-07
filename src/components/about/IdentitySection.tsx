@@ -1,13 +1,19 @@
 import { profile } from "@/data/profile";
 
+type IdentityItem = {
+  label: string;
+  value: string;
+  accent: boolean;
+};
+
 export default function IdentitySection() {
-  const identity = [
-    { label: "Nama", value: profile.name, wide: true },
-    { label: "Umur", value: profile.age, wide: false },
-    { label: "Asal", value: profile.city, wide: false },
-    { label: "Sekolah", value: profile.school, wide: false },
-    { label: "Jurusan", value: profile.major, wide: false },
-    { label: "Status", value: profile.status, wide: true },
+  const identity: IdentityItem[] = [
+    { label: "Nama", value: profile.name, accent: true },
+    { label: "Umur", value: profile.age, accent: false },
+    { label: "Asal", value: profile.city, accent: false },
+    { label: "Sekolah", value: profile.school, accent: true },
+    { label: "Jurusan", value: profile.major, accent: true },
+    { label: "Status", value: profile.status, accent: false },
   ];
 
   return (
@@ -29,19 +35,31 @@ export default function IdentitySection() {
             ))}
           </div>
         </div>
-        <div className="grid content-start gap-4 sm:grid-cols-2">
+        <dl className="grid content-start gap-4 sm:auto-rows-fr sm:grid-cols-2">
           {identity.map((item) => (
             <div
               key={item.label}
-              className={`rounded-2xl border border-line bg-snow p-5 ${item.wide ? "sm:col-span-2" : ""}`}
+              className={`rounded-3xl border p-6 ${
+                item.accent ? "border-linedark bg-ink" : "border-line bg-snow"
+              }`}
             >
-              <div className="flex items-center gap-2 text-muted">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em]">{item.label}</p>
-              </div>
-              <p className="mt-2.5 text-sm font-semibold text-ink">{item.value}</p>
+              <dt
+                className={`text-xs font-semibold uppercase tracking-[0.2em] ${
+                  item.accent ? "text-muteddark" : "text-muted"
+                }`}
+              >
+                {item.label}
+              </dt>
+              <dd
+                className={`mt-2.5 text-base font-semibold leading-snug ${
+                  item.accent ? "text-paper" : "text-ink"
+                }`}
+              >
+                {item.value}
+              </dd>
             </div>
           ))}
-        </div>
+        </dl>
       </div>
     </section>
   );
