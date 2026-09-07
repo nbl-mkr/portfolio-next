@@ -20,7 +20,7 @@ export default function SkillsSection() {
                 {group.skills.map((skill) => (
                   <article
                     key={skill.name}
-                    className="rounded-3xl border border-linedark bg-coal p-6 transition-transform duration-200 hover:-translate-y-1"
+                    className="rounded-3xl border border-linedark bg-coal p-6 transition-colors duration-200 hover:border-paper motion-reduce:transition-none"
                   >
                     <h3 className="font-display text-lg font-semibold tracking-tight">{skill.name}</h3>
                     <p className="mt-4 text-sm leading-relaxed text-muteddark">{skill.description}</p>
