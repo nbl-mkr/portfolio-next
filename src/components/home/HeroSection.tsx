@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { profile, toolsMarquee } from "@/data/profile";
+import HeroSpotlight from "@/components/home/HeroSpotlight";
 
 export default function HeroSection() {
   return (
     <section className="bg-ink text-paper">
-      <div className="mx-auto grid max-w-6xl gap-14 px-6 py-20 md:grid-cols-[1.15fr_0.85fr] md:items-center md:py-28">
+      <HeroSpotlight>
+        <div className="mx-auto grid max-w-6xl gap-14 px-6 py-20 md:grid-cols-[1.15fr_0.85fr] md:items-center md:py-28">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muteddark">
             Hi, I&apos;m
@@ -22,13 +24,13 @@ export default function HeroSection() {
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Link
               href="/gallery"
-              className="inline-flex items-center gap-2 rounded-xl bg-paper px-6 py-3.5 text-sm font-semibold text-ink transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-xl border border-paper bg-paper px-6 py-3.5 text-sm font-semibold text-ink transition-colors duration-200 hover:border-transparent hover:bg-coal hover:text-paper motion-reduce:transition-none"
             >
               View Work
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-linedark px-6 py-3.5 text-sm font-semibold text-paper transition-colors duration-200 hover:bg-coal"
+              className="inline-flex items-center gap-2 rounded-xl border border-linedark px-6 py-3.5 text-sm font-semibold text-paper transition-colors duration-200 hover:bg-coal motion-reduce:transition-none"
             >
               Contact Me
             </Link>
@@ -52,7 +54,8 @@ export default function HeroSection() {
             />
           </div>
         </div>
-      </div>
+        </div>
+      </HeroSpotlight>
       <div className="border-t border-linedark py-6">
         <div className="overflow-hidden">
           <div className="animate-marquee flex w-max">
