@@ -8,7 +8,7 @@ export default function HeroSection() {
       <div className="mx-auto grid max-w-6xl gap-14 px-6 py-20 md:grid-cols-[1.15fr_0.85fr] md:items-center md:py-28">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muteddark">
-            Hi, I'm
+            Hi, I&apos;m
           </p>
           <h1 className="mt-4 font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
             {profile.shortName}
