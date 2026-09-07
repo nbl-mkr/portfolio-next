@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { GalleryItem } from "@/data/gallery";
 
 interface GalleryCardProps {
@@ -6,32 +7,30 @@ interface GalleryCardProps {
 
 export default function GalleryCard({ item }: GalleryCardProps) {
   return (
-    <article className="flex h-full flex-col rounded-3xl border border-line bg-paper p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
-      <div className="relative aspect-video overflow-hidden rounded-2xl bg-snow border border-line flex items-center justify-center p-4 text-center">
-        <img
+    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-paper transition-colors duration-200 hover:border-ink motion-reduce:transition-none">
+      <div className="relative aspect-video bg-snow">
+        <Image
           src={item.image}
           alt={item.title}
-          className="h-full w-full object-cover absolute inset-0"
-          onError={(e) => {
-            (e.target as HTMLElement).style.display = "none";
-          }}
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover"
         />
-        <span className="text-xs font-medium text-muted">
+      </div>
+      <div className="flex flex-1 flex-col p-5 md:p-6">
+        <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+          <span>{item.category}</span>
+          <span>{item.year}</span>
+        </div>
+        <h3 className="mt-3 font-display text-lg font-semibold tracking-tight text-ink md:text-xl">
           {item.title}
-        </span>
-      </div>
-      <div className="mt-5 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] text-muted">
-        <span>{item.category}</span>
-        <span>{item.year}</span>
-      </div>
-      <h3 className="mt-2.5 font-display text-lg font-semibold tracking-tight text-ink">{item.title}</h3>
-      <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted">{item.description}</p>
-      <div className="mt-5 flex flex-wrap gap-2">
-        {item.tags.map((tag) => (
-          <span key={tag} className="rounded-full border border-line bg-snow px-3 py-1 text-xs font-medium text-muted">
-            {tag}
-          </span>
-        ))}
+        </h3>
+        <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted">
+          {item.description}
+        </p>
+        <p className="mt-5 text-xs font-medium text-muted">
+          {item.tags.join(", ")}
+        </p>
       </div>
     </article>
   );
