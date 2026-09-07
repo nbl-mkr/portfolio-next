@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowUpRight, Code, Images, RocketLaunch } from "@phosphor-icons/react/ssr";
+import { ArrowUpRight, Code, PaperPlaneTilt, RocketLaunch } from "@phosphor-icons/react/ssr";
 import { skillGroups } from "@/data/profile";
 import { galleryItems } from "@/data/gallery";
+import { socials } from "@/data/socials";
 
 type HighlightCard = {
   index: string;
@@ -19,14 +20,14 @@ type HighlightCard = {
 export default function HighlightCards() {
   const totalSkills = skillGroups.reduce((acc, group) => acc + group.skills.length, 0);
   const totalProjects = galleryItems.filter((item) => item.category === "Proyek").length;
-  const totalItems = galleryItems.length;
+  const totalSocials = socials.length;
 
   const cards: HighlightCard[] = [
     {
       index: "01",
       label: "Karya",
-      title: "Proyek Terbaru",
-      description: `${totalProjects} proyek pengerjaan mulai dari website hingga aplikasi mobile sebagai bukti belajar.`,
+      title: "Proyek Rancangan",
+      description: `${totalProjects} proyek pengerjaan website dengan berbagai fungsional berbeda sebagai bukti belajar.`,
       stat: String(totalProjects),
       statLabel: "proyek terdokumentasi",
       href: "/gallery",
@@ -38,7 +39,7 @@ export default function HighlightCards() {
       index: "02",
       label: "Kemampuan",
       title: "Skill & Tools",
-      description: `${totalSkills} teknologi yang aku pelajari, dari HTML hingga Firebase, terus bertambah seiring waktu.`,
+      description: `${totalSkills} teknologi yang aku pelajari, dari HTML hingga Supabase, terus bertambah seiring waktu.`,
       stat: String(totalSkills),
       statLabel: "teknologi dipelajari",
       href: "/about",
@@ -47,14 +48,14 @@ export default function HighlightCards() {
     },
     {
       index: "03",
-      label: "Dokumentasi",
-      title: "Gallery",
-      description: `${totalItems} karya terkumpul dalam satu galeri, mencakup proyek, prestasi, dan keikutsertaan.`,
-      stat: String(totalItems),
-      statLabel: "karya terkumpul",
-      href: "/gallery",
-      cta: "Buka galeri",
-      icon: Images,
+      label: "Kontak",
+      title: "Mari Terhubung",
+      description: `${totalSocials} saluran sosial siap dihubungi, atau kirim pesan langsung lewat email di halaman kontak.`,
+      stat: String(totalSocials),
+      statLabel: "saluran sosial aktif",
+      href: "/contact",
+      cta: "Hubungi saya",
+      icon: PaperPlaneTilt,
     },
   ];
 
