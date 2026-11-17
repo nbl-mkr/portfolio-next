@@ -2,7 +2,7 @@ import Link from "next/link";
 import { profile } from "@/data/profile";
 
 const footerLinks = [
-  { label: "Beranda", href: "/#home" },
+  { label: "Home", href: "/#home" },
   { label: "About", href: "/#about" },
   { label: "Gallery", href: "/#gallery" },
   { label: "Contact", href: "/#contact" },

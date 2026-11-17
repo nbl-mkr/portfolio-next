@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { profile } from "@/data/profile";
 
 const navItems = [
-  { label: "Beranda", id: "home", href: "/#home" },
+  { label: "Home", id: "home", href: "/#home" },
   { label: "About", id: "about", href: "/#about" },
   { label: "Gallery", id: "gallery", href: "/#gallery" },
   { label: "Contact", id: "contact", href: "/#contact" },
