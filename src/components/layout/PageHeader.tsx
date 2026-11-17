@@ -1,12 +1,13 @@
 interface PageHeaderProps {
+  id: string;
   label: string;
   title: string;
   description: string;
 }
 
-export default function PageHeader({ label, title, description }: PageHeaderProps) {
+export default function PageHeader({ id, label, title, description }: PageHeaderProps) {
   return (
-    <section className="bg-ink text-paper">
+    <section id={id} className="bg-ink text-paper">
       <div className="mx-auto flex max-w-6xl flex-col items-start px-6 py-20 md:py-28">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muteddark">{label}</p>
         <h1 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">{title}</h1>

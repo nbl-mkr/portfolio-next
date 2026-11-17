@@ -2,10 +2,10 @@ import Link from "next/link";
 import { profile } from "@/data/profile";
 
 const footerLinks = [
-  { label: "Beranda", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" },
+  { label: "Beranda", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Footer() {
