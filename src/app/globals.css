@@ -16,6 +16,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
   }
   body {
     @apply bg-paper font-sans text-ink antialiased;
@@ -43,6 +44,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .animate-marquee {
     animation: none;
   }
