@@ -5,7 +5,7 @@ import HeroSpotlight from "@/components/home/HeroSpotlight";
 
 export default function HeroSection() {
   return (
-    <section className="bg-ink text-paper">
+    <section id="home" className="bg-ink text-paper">
       <HeroSpotlight>
         <div className="mx-auto grid max-w-6xl gap-14 px-6 py-20 md:grid-cols-[1.15fr_0.85fr] md:items-center md:py-24">
           <div>
@@ -23,13 +23,13 @@ export default function HeroSection() {
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <Link
-                href="/gallery"
+                href="/#gallery"
                 className="inline-flex items-center gap-2 rounded-xl border border-paper bg-paper px-6 py-3.5 text-sm font-semibold text-ink transition-colors duration-200 hover:border-transparent hover:bg-coal hover:text-paper motion-reduce:transition-none"
               >
                 View Work
               </Link>
               <Link
-                href="/contact"
+                href="/#contact"
                 className="inline-flex items-center gap-2 rounded-xl border border-linedark px-6 py-3.5 text-sm font-semibold text-paper transition-colors duration-200 hover:bg-coal motion-reduce:transition-none"
               >
                 Contact Me
